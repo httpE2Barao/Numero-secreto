@@ -1,4 +1,5 @@
 const elementoChute = document.querySelector("#chute")
+const compatibilidade = document.querySelector("#compatibilidade")
 
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 

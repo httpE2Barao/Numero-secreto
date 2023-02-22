@@ -3,19 +3,18 @@ function verificaChute(chute) {
     const numero = parseInt(chute)
 
     if (chuteInvalido(numero)) {
-        elementoChute.innerHTML += '<div>Valor inválido!</div>'
+        if (chute.toUpperCase() === "GAME OVER") {
+            gameOver()
+        } else {
+        elementoChute.innerHTML += '<div>Valor inválido!</div>'}
         return
     } else if (verificaSeDentroDoLimite(numero)){
         elementoChute.innerHTML += `<div>Diga um número entre ${menorValor} e ${maiorValor}</div>`
         return
-    } else if (numero === numeroSecreto){
-        document.body.innerHTML = `
-            <h2>Você acertou!</h2>
-            <h3>O número secreto era ${numeroSecreto}</h3>
-
-            <button id='jogarNovamente' class='btn-jogar'>Jogar Novamente</button>
-        `
-    } else if (numero > numeroSecreto){
+        
+    } else if (numero === numeroSecreto){ acertou() }
+    
+    else if (numero > numeroSecreto){
         elementoChute.innerHTML += `
             <div>O número secreto é menor</div> <i class="fa-solid fa-angle-down"></i>
         `
@@ -39,3 +38,21 @@ document.body.addEventListener('click', (e) => {
         window.location.reload()
     }
 })
+
+function acertou() {
+    document.body.innerHTML = 
+        `
+        <h2>Você acertou!</h2>
+        <h3>O número secreto era ${numeroSecreto}</h3>
+        <button id='jogarNovamente' class='btn-jogar'>Jogar Novamente</button>
+        `
+}
+
+function gameOver() {
+    document.body.innerHTML = 
+        `
+        <h2>Game Over!</h2>
+        <h3>O número secreto era ${numeroSecreto}</h3>
+        <button id='jogarNovamente' class='btn-jogar'>Jogar Novamente</button>
+        `   
+}

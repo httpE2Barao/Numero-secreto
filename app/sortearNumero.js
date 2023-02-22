@@ -13,3 +13,10 @@ elemMenorVal.innerHTML = menorValor
 
 const elemMaiorVal = document.querySelector("#maior-val")
 elemMaiorVal.innerHTML = maiorValor
+
+compatibilidade.addEventListener('click', () => {
+    document.body.innerHTML = `
+        <h2>Compatibilidade de navegadores</h2>
+        <img src='img/compatibilidade.png'></img>
+    `
+}) 

@@ -46,7 +46,11 @@ h3 {
     margin: 20px;
 }
 
-.btn-jogar {
+img {
+    margin-top: 50px;
+}
+
+button {
     padding: 8px 15px;
     border: 0;
     background: var(--primary-color);
@@ -55,7 +59,7 @@ h3 {
     transition: transform .3s;
 }
 
-.btn-jogar:hover {
+button:hover {
     transform: translate(0, -5px);
     transition: transform .3s;
 }
